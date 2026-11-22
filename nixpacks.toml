@@ -1,0 +1,11 @@
+# nixpacks.toml — build/start config for Railway and Render (nixpacks builder)
+# Railway auto-detects this file. Render uses it when "Nixpacks" is selected.
+
+[phases.build]
+cmds = ["npm ci --omit=dev --ignore-scripts", "npx tsc"]
+
+[start]
+cmd = "node dist/index.js"
+
+[variables]
+NODE_ENV = "production"
